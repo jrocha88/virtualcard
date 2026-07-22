@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>José Roberto Rocha — FS Tatuí</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg-0:#E9EBEA;
+    --bg-1:#F3F4F2;
+    --plate:#FFFFFF;
+    --line:#E4E2D9;
+    --gold:#B08B3A;
+    --gold-bright:#C9A14A;
+    --gold-soft:rgba(176,139,58,0.10);
+    --ink-0:#22252B;
+    --ink-1:#5B5F68;
+    --ink-2:#93979F;
+    --wa:#25D366;
+  }
+
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+
+  html,body{
+    margin:0; padding:0;
+    background:
+      radial-gradient(120% 90% at 50% -10%, rgba(176,139,58,0.07), transparent 55%),
+      linear-gradient(180deg, var(--bg-1), var(--bg-0) 75%);
+    min-height:100vh;
+    font-family:'Inter', -apple-system, sans-serif;
+    color:var(--ink-0);
+    display:flex; align-items:center; justify-content:center;
+    padding:28px 16px;
+  }
+
+  .card{
+    width:100%;
+    max-width:380px;
+    position:relative;
+  }
+
+  .plate{
+    background:var(--plate);
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:34px 26px 26px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 24px 48px -24px rgba(34,37,43,0.16), 0 2px 8px -2px rgba(34,37,43,0.06);
+  }
+  .plate::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, transparent, var(--gold-bright), transparent);
+    height:2px; top:0;
+    opacity:0.75;
+  }
+
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:26px;
+    line-height:1.15;
+    margin:0 0 8px;
+    color:var(--ink-0);
+    letter-spacing:0.01em;
+  }
+
+  .role{
+    font-size:13.5px;
+    color:var(--ink-1);
+    font-weight:500;
+    margin-bottom:22px;
+    letter-spacing:0.01em;
+  }
+
+  .divider{
+    width:36px; height:1px;
+    background:var(--gold-bright);
+    opacity:0.7;
+    margin:0 auto 22px;
+  }
+
+  .save-btn{
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    width:100%;
+    padding:14px 18px;
+    background:var(--ink-0);
+    color:#F5F3EC;
+    border:none;
+    border-radius:13px;
+    font-family:'Inter', sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:0.01em;
+    cursor:pointer;
+    margin-bottom:24px;
+    box-shadow:0 10px 22px -10px rgba(34,37,43,0.45);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .save-btn:active{ transform:scale(0.97); box-shadow:0 4px 12px -6px rgba(34,37,43,0.4); }
+  .save-btn svg{ width:17px; height:17px; flex-shrink:0; color:var(--gold-bright); }
+
+  .links{
+    display:flex; flex-direction:column; gap:10px;
+    text-align:left;
+  }
+
+  .link-row{
+    display:flex; align-items:center; gap:13px;
+    padding:12px 14px;
+    background:#FBFAF7;
+    border:1px solid var(--line);
+    border-radius:13px;
+    text-decoration:none;
+    color:var(--ink-0);
+    transition:background 0.15s ease, border-color 0.15s ease;
+  }
+  .link-row:active{ background:#F3F1EA; }
+
+  .icon{
+    width:34px; height:34px;
+    border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    background:var(--gold-soft);
+  }
+  .icon svg{ width:17px; height:17px; }
+
+  .link-text{ flex:1; min-width:0; }
+  .link-label{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.09em;
+    color:var(--ink-2);
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .link-value{
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink-0);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .chevron{ width:14px; height:14px; color:var(--ink-2); flex-shrink:0; }
+
+  .footer{
+    text-align:center;
+    margin-top:26px;
+    font-size:10.5px;
+    color:var(--ink-2);
+    letter-spacing:0.03em;
+  }
+  .footer a{ color:var(--ink-2); text-decoration:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    .save-btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="plate">
+    <div class="eyebrow">Cartão de Apresentação</div>
+    <h1>José Roberto Rocha</h1>
+    <div class="role">Analista de Infraestrutura e Tecnologia</div>
+    <div class="divider"></div>
+
+    <button class="save-btn" onclick="salvarContato()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Salvar contato
+    </button>
+
+    <div class="links">
+      <a class="link-row" href="https://wa.me/5515996133664" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(37,211,102,0.13)">
+          <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.1 4 3.07 8.02 3.07 12.97c0 1.66.44 3.28 1.27 4.7L3 21.5l3.94-1.03a9.05 9.05 0 0 0 5.1 1.55h.01c4.94 0 8.97-4.02 8.97-8.97a8.9 8.9 0 0 0-2.62-6.34l.2-.4Zm-5.55 13.7h-.01a7.5 7.5 0 0 1-3.83-1.05l-.27-.16-2.85.75.76-2.78-.18-.28a7.45 7.45 0 0 1-1.15-4c0-4.13 3.36-7.49 7.5-7.49a7.45 7.45 0 0 1 5.3 2.2 7.43 7.43 0 0 1 2.19 5.3c0 4.14-3.37 7.51-7.46 7.51Zm4.1-5.62c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.06-.22-.11-.94-.35-1.79-1.1a6.7 6.7 0 0 1-1.24-1.54c-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.06-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.94 2.36c.11.15 1.62 2.48 3.93 3.47.55.24.98.38 1.31.49.55.17 1.05.15 1.45.09.44-.07 1.32-.54 1.51-1.06.19-.52.19-.96.13-1.06-.06-.09-.2-.15-.42-.26Z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">WhatsApp</div>
+          <div class="link-value">(15) 99613-3664</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+
+      <a class="link-row" href="mailto:jose.rocha@fstatui.com.br">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B08B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">E-mail</div>
+          <div class="link-value">jose.rocha@fstatui.com.br</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+
+      <a class="link-row" href="https://www.linkedin.com/in/josé-roberto-rocha-17819090" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(10,102,194,0.12)">
+          <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">LinkedIn</div>
+          <div class="link-value">josé-roberto-rocha</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+
+      <a class="link-row" href="https://www.instagram.com/beto_lopes_?igsh=YTRscjQ1eTJ5bmtp&utm_source=qr" target="_blank" rel="noopener">
+        <div class="icon" style="background:rgba(225,48,108,0.12)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.2" cy="6.8" r="0.6" fill="#E1306C" stroke="none"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">Instagram</div>
+          <div class="link-value">@beto_lopes_</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+
+      <a class="link-row" href="https://fstatui.com.br" target="_blank" rel="noopener">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B08B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18Z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-label">Site</div>
+          <div class="link-value">fstatui.com.br</div>
+        </div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">FS Tatuí — Capital · Factoring · FIDC · Securitizadora</div>
+</div>
+
+<script>
+function salvarContato(){
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:Rocha;José Roberto;;;',
+    'FN:José Roberto Rocha',
+    'ORG:FS Tatuí',
+    'TITLE:Analista de Infraestrutura e Tecnologia',
+    'TEL;TYPE=CELL:+5515996133664',
+    'EMAIL;TYPE=INTERNET:jose.rocha@fstatui.com.br',
+    'URL:https://fstatui.com.br',
+    'END:VCARD'
+  ].join('\r\n');
+
+  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'Jose-Roberto-Rocha-FS-Tatui.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>
